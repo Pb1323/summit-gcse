@@ -1,26 +1,45 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf7f0;
+  --foreground: #14213d;
+
+  --sg-navy: #0f1f3d;
+  --sg-navy-light: #1c3363;
+  --sg-gold: #c8952c;
+  --sg-gold-light: #e8c477;
+  --sg-cream: #faf7f0;
+  --sg-cream-deep: #f2ecdd;
+  --sg-ink: #14213d;
+  --sg-muted: #5b6478;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-sg-navy: var(--sg-navy);
+  --color-sg-navy-light: var(--sg-navy-light);
+  --color-sg-gold: var(--sg-gold);
+  --color-sg-gold-light: var(--sg-gold-light);
+  --color-sg-cream: var(--sg-cream);
+  --color-sg-cream-deep: var(--sg-cream-deep);
+  --color-sg-ink: var(--sg-ink);
+  --color-sg-muted: var(--sg-muted);
+  --font-sans: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+.font-serif-display {
+  font-family: var(--font-serif);
+}
+
+::selection {
+  background: var(--sg-gold-light);
+  color: var(--sg-navy);
 }
