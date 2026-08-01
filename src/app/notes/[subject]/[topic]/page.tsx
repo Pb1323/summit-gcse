@@ -32,7 +32,7 @@ export default async function TopicPage({
   return (
     <Container className="py-16">
       <nav className="text-sm text-sg-ink/50">
-        <Link href="/notes" className="hover:text-sg-navy">Study Notes</Link>
+        <Link href="/notes/economics" className="hover:text-sg-navy">Topics</Link>
         <span className="mx-2">/</span>
         <Link href={`/notes/${subject.slug}`} className="hover:text-sg-navy">
           {subject.title}

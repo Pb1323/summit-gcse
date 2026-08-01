@@ -15,26 +15,30 @@ export default function AboutPage() {
       </h1>
       <div className="mt-6 max-w-2xl space-y-4 text-sg-ink/75">
         <p>
-          Summit GCSE is built by a working tutor for GCSE students who want
-          notes that actually match their exam board&apos;s specification, instead
-          of generic revision content that skips around the syllabus.
+          Summit GCSE Economics is built by a working tutor for OCR GCSE
+          Economics students, and right now it&apos;s entirely dedicated to that
+          one qualification — no generic revision content, no skipping around
+          the syllabus.
         </p>
         <p>
-          Every topic is organised the way the exam board organises it, so
-          you always know exactly what&apos;s examinable. Each subtopic ends with
-          a concrete exam tip — the kind of thing a tutor would tell you in a
-          real session, not a textbook summary.
+          Every topic and subtopic follows OCR&apos;s real J205 specification, so
+          you always know exactly what&apos;s examinable. Wherever the spec
+          expects a diagram — demand and supply, aggregate demand/supply,
+          PPF, exchange rates — there&apos;s a real one, not just a description
+          of what it would look like.
         </p>
         <p>
-          The first subject live is OCR GCSE Economics (J205). More subjects
-          and exam boards are being added over time.
+          Each subtopic also ends with a full model exam answer: a realistic
+          exam-style question with a properly developed response, so you can
+          see exactly how marks are actually built up, not just read the
+          theory behind them.
         </p>
       </div>
       <Link
         href="/notes/economics"
         className="mt-8 inline-block rounded-full bg-sg-navy px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-sg-navy-light"
       >
-        Start with Economics
+        Start revising
       </Link>
     </Container>
   );

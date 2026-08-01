@@ -30,7 +30,7 @@ export default async function SubjectPage({
   return (
     <Container className="py-16">
       <nav className="text-sm text-sg-ink/50">
-        <Link href="/notes" className="hover:text-sg-navy">Study Notes</Link>
+        <Link href="/notes/economics" className="hover:text-sg-navy">Topics</Link>
         <span className="mx-2">/</span>
         <span className="text-sg-ink/70">{subject.title}</span>
       </nav>

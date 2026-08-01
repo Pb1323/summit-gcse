@@ -10,11 +10,12 @@ export function Footer() {
             Summit GCSE
           </p>
           <p className="mt-1 text-sm text-sg-cream/60">
-            Exam-board-specific study notes, built for GCSE students.
+            OCR GCSE Economics (J205) study notes — diagrams, key terms, and
+            model exam answers for every topic on the spec.
           </p>
         </div>
         <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
-          <Link href="/notes" className="hover:text-white">Study Notes</Link>
+          <Link href="/notes/economics" className="hover:text-white">Topics</Link>
           <Link href="/about" className="hover:text-white">About</Link>
           <Link href="/contact" className="hover:text-white">Contact</Link>
         </nav>

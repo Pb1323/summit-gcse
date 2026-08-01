@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/container";
 import { getSubtopic, SUBJECTS } from "@/data/economics-notes";
 import type { Subject, Topic, Subtopic } from "@/types/notes";
+import { EconDiagram } from "@/components/diagrams/econ-diagram";
 
 export function generateStaticParams() {
   return SUBJECTS.flatMap((s) =>
@@ -98,7 +99,7 @@ export default async function SubtopicPage({
 
         <article className="min-w-0">
           <nav className="text-sm text-sg-ink/50">
-            <Link href="/notes" className="hover:text-sg-navy">Study Notes</Link>
+            <Link href="/notes/economics" className="hover:text-sg-navy">Topics</Link>
             <span className="mx-2">/</span>
             <Link href={`/notes/${subject.slug}`} className="hover:text-sg-navy">
               {subject.title}
@@ -121,6 +122,12 @@ export default async function SubtopicPage({
           <p className="mt-3 text-lg leading-relaxed text-sg-ink/70">
             {subtopic.summary}
           </p>
+
+          {subtopic.diagram && (
+            <div className="mt-8">
+              <EconDiagram diagram={subtopic.diagram} />
+            </div>
+          )}
 
           <div className="mt-10 space-y-8">
             {subtopic.sections.map((section) => (
@@ -165,6 +172,27 @@ export default async function SubtopicPage({
               {subtopic.examTip}
             </p>
           </section>
+
+          {subtopic.modelAnswer && (
+            <section className="mt-6 rounded-2xl border border-sg-navy/15 bg-sg-navy p-6 text-sg-cream">
+              <p className="text-xs font-semibold uppercase tracking-wide text-sg-gold-light">
+                Model answer practice · {subtopic.modelAnswer.marks} marks
+              </p>
+              <p className="mt-3 font-serif-display text-lg font-semibold text-white">
+                {subtopic.modelAnswer.command}: {subtopic.modelAnswer.question}
+              </p>
+              <ol className="mt-4 space-y-2.5">
+                {subtopic.modelAnswer.points.map((point, i) => (
+                  <li key={i} className="flex gap-3 text-sm leading-relaxed text-sg-cream/85">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sg-gold text-[11px] font-bold text-sg-navy">
+                      {i + 1}
+                    </span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          )}
 
           <div className="mt-10 flex flex-col gap-4 border-t border-sg-navy/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
             {prev ? (

@@ -5,11 +5,11 @@ import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Summit GCSE — Exam-Board-Specific Study Notes",
-    template: "%s — Summit GCSE",
+    default: "Summit GCSE Economics — OCR GCSE Economics Study Notes",
+    template: "%s — Summit GCSE Economics",
   },
   description:
-    "Clear, exam-board-specific GCSE study notes. Starting with OCR GCSE Economics, organised topic by topic with key terms and exam tips.",
+    "Complete OCR GCSE Economics (J205) study notes: every topic, real diagrams (demand/supply, AD/AS, PPF), key terms, and model exam answers.",
 };
 
 export default function RootLayout({

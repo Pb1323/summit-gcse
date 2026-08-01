@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/container";
 
 const NAV_LINKS = [
-  { href: "/notes", label: "Study Notes" },
+  { href: "/notes/economics", label: "Topics" },
   { href: "/about", label: "About" },
 ];
 
@@ -14,8 +14,13 @@ export function Header() {
           <span className="flex h-8 w-8 items-center justify-center rounded-full bg-sg-navy text-sm font-semibold text-sg-gold-light font-serif-display">
             S
           </span>
-          <span className="font-serif-display text-lg font-semibold tracking-tight text-sg-navy">
-            Summit GCSE
+          <span className="flex flex-col leading-tight">
+            <span className="font-serif-display text-lg font-semibold tracking-tight text-sg-navy">
+              Summit GCSE
+            </span>
+            <span className="text-[11px] font-semibold uppercase tracking-wide text-sg-gold">
+              OCR Economics
+            </span>
           </span>
         </Link>
         <nav className="hidden items-center gap-8 sm:flex">

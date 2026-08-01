@@ -1,44 +1,56 @@
 import Link from "next/link";
 import { Container } from "@/components/container";
 import { ECONOMICS, countSubtopics } from "@/data/economics-notes";
+import { EconDiagram } from "@/components/diagrams/econ-diagram";
 
 export default function Home() {
   const subtopicCount = countSubtopics(ECONOMICS);
+  const diagramCount = ECONOMICS.topics.reduce(
+    (sum, t) => sum + t.subtopics.filter((s) => s.diagram).length,
+    0
+  );
+  const showcaseDiagram = ECONOMICS.topics[1].subtopics[2].diagram!;
 
   return (
     <>
       <section className="border-b border-sg-navy/10 bg-gradient-to-b from-sg-cream-deep to-sg-cream py-20 sm:py-28">
         <Container>
-          <div className="max-w-2xl">
-            <p className="inline-flex items-center rounded-full border border-sg-gold/40 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wide text-sg-gold">
-              GCSE Study Notes
-            </p>
-            <h1 className="mt-6 font-serif-display text-4xl font-semibold leading-tight tracking-tight text-sg-navy sm:text-5xl">
-              Study notes built around your exact exam board specification.
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-sg-ink/75">
-              No generic revision guides. Summit GCSE organises every topic exactly
-              the way your exam board structures it, with plain-English
-              explanations, key terms, and exam tips built in. Starting with{" "}
-              <strong className="text-sg-navy">OCR GCSE Economics (J205)</strong>.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/notes/economics"
-                className="rounded-full bg-sg-navy px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-sg-navy-light"
-              >
-                Start with Economics
-              </Link>
-              <Link
-                href="/notes"
-                className="rounded-full border border-sg-navy/20 px-6 py-3 text-sm font-semibold text-sg-navy transition-colors hover:bg-white"
-              >
-                Browse all notes
-              </Link>
+          <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div>
+              <p className="inline-flex items-center rounded-full border border-sg-gold/40 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wide text-sg-gold">
+                OCR GCSE Economics (J205)
+              </p>
+              <h1 className="mt-6 font-serif-display text-4xl font-semibold leading-tight tracking-tight text-sg-navy sm:text-5xl">
+                Every OCR GCSE Economics topic, with real diagrams and model exam answers.
+              </h1>
+              <p className="mt-6 text-lg leading-relaxed text-sg-ink/75">
+                Not another wall of text. Every subtopic follows the real OCR
+                specification, and comes with a proper diagram — demand and
+                supply, aggregate demand/supply, PPF, exchange rates — plus a
+                full worked model answer showing exactly how to structure a
+                strong exam response.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link
+                  href="/notes/economics"
+                  className="rounded-full bg-sg-navy px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-sg-navy-light"
+                >
+                  Start revising
+                </Link>
+                <Link
+                  href="/about"
+                  className="rounded-full border border-sg-navy/20 px-6 py-3 text-sm font-semibold text-sg-navy transition-colors hover:bg-white"
+                >
+                  How it&apos;s built
+                </Link>
+              </div>
+              <p className="mt-6 text-sm text-sg-ink/50">
+                {subtopicCount} subtopics · {diagramCount} diagrams · a model exam answer on every page. Free to read, no account needed.
+              </p>
             </div>
-            <p className="mt-6 text-sm text-sg-ink/50">
-              {subtopicCount} subtopics live across all 4 OCR Economics topics — free to read, no account needed.
-            </p>
+            <div className="hidden lg:block">
+              <EconDiagram diagram={showcaseDiagram} />
+            </div>
           </div>
         </Container>
       </section>
@@ -46,20 +58,20 @@ export default function Home() {
       <section className="py-16 sm:py-20">
         <Container>
           <h2 className="font-serif-display text-2xl font-semibold text-sg-navy">
-            Why Summit GCSE
+            Why Summit GCSE Economics
           </h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
             <FeatureCard
-              title="Spec-matched structure"
-              body="Every topic and subtopic follows the real exam board specification, so you always know exactly what's examinable and what isn't."
+              title="Real diagrams, not text walls"
+              body="Demand and supply, AD/AS, PPF, exchange rates, pie charts and bar charts — drawn out properly wherever the spec actually expects a diagram."
             />
             <FeatureCard
-              title="Exam tips, not just theory"
-              body="Each subtopic ends with a concrete tip on how examiners actually award marks — not just what the theory says."
+              title="Model answers on every page"
+              body="Each subtopic ends with a real exam-style question and a full, developed model answer, so you can see exactly what a strong response looks like, not just the theory behind it."
             />
             <FeatureCard
-              title="Built by a working tutor"
-              body="Written by a tutor who teaches this content directly to GCSE students, not scraped or auto-generated."
+              title="Matches the real OCR spec"
+              body="Structured around OCR's actual four-topic J205 specification, so you always know exactly what's examinable — nothing extra, nothing missing."
             />
           </div>
         </Container>
@@ -70,11 +82,11 @@ export default function Home() {
           <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
             <div>
               <h2 className="font-serif-display text-2xl font-semibold text-sg-navy">
-                OCR GCSE Economics (J205)
+                The four OCR topics
               </h2>
               <p className="mt-2 max-w-xl text-sg-ink/70">
-                All four topics — Introduction to Economics, The Role of Markets
-                and Money, Economic Objectives and the Role of Government, and
+                Introduction to Economics, The Role of Markets and Money,
+                Economic Objectives and the Role of Government, and
                 International Trade and the Global Economy.
               </p>
             </div>
@@ -82,7 +94,7 @@ export default function Home() {
               href="/notes/economics"
               className="shrink-0 rounded-full bg-sg-gold px-6 py-3 text-sm font-semibold text-sg-navy transition-colors hover:bg-sg-gold-light"
             >
-              View topics →
+              View all topics →
             </Link>
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
