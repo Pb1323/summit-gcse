@@ -2,7 +2,7 @@
 
 # Summit GCSE — Project Context
 
-Last updated: 2026-08-01 (diagrams + model answers pass).
+Last updated: 2026-08-01 (added Quantitative Skills + glossary page).
 
 ## Purpose
 
@@ -89,7 +89,23 @@ that work is done, and don't re-add multi-subject UI without being asked.
 
 ## Current Content
 
-OCR GCSE Economics (J205), all 4 real spec topics, 23 subtopics total —
+OCR GCSE Economics (J205), all 4 real spec topics, 23 subtopics, **plus** a
+5th, deliberately-not-numbered-like-the-others entry: `quantitative-skills`
+(`code: "Exam skills"`, not "Topic 5") covering percentages/percentage
+change, index numbers, and interpreting tables/graphs — real OCR exam
+skills examined throughout both papers, but not one of OCR's own numbered
+topics, so its `code` and description are written to make that distinction
+clear rather than implying a 5th official spec topic exists. 26 subtopics
+total.
+
+A `/notes/[subject]/glossary` page (`src/app/notes/[subject]/glossary/page.tsx`)
+aggregates every subtopic's `keyTerms` into one alphabetical, letter-jump
+reference page, each entry linking back to its source subtopic — pulled
+automatically from the data file, no manual glossary list to maintain.
+Linked from header nav, footer, the subject/topics page, and the sticky
+sidebar on every subtopic page.
+
+Below is the original 4-topic, 23-subtopic breakdown —
 topic/subtopic structure cross-checked against `ocr.org.uk`'s public spec
 pages and mrgoff.com's real OCR-specific GCSE Economics topic list (both via
 live web search/fetch, not guessed) — every subtopic has real explanatory

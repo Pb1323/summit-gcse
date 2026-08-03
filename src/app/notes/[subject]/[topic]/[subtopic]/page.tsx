@@ -94,6 +94,12 @@ export default async function SubtopicPage({
                 </ul>
               </div>
             ))}
+            <Link
+              href={`/notes/${subject.slug}/glossary`}
+              className="block border-t border-sg-navy/10 pt-4 text-sm font-semibold text-sg-navy hover:text-sg-gold"
+            >
+              Glossary →
+            </Link>
           </div>
         </aside>
 

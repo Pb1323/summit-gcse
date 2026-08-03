@@ -3,6 +3,7 @@ import { Container } from "@/components/container";
 
 const NAV_LINKS = [
   { href: "/notes/economics", label: "Topics" },
+  { href: "/notes/economics/glossary", label: "Glossary" },
   { href: "/about", label: "About" },
 ];
 

@@ -1714,6 +1714,169 @@ export const ECONOMICS: Subject = {
         },
       ],
     },
+    {
+      slug: "quantitative-skills",
+      code: "Exam skills",
+      title: "Quantitative Skills",
+      description:
+        "Not a separate OCR topic in its own right — these are the calculation and data-interpretation skills examined throughout both J205/01 and J205/02, wherever a question gives you a table, a graph, or asks you to calculate a value. Worth revising as its own toolkit, since these questions come up on almost every paper.",
+      subtopics: [
+        {
+          slug: "percentages-and-percentage-change",
+          code: "Q1",
+          title: "Calculating Percentages and Percentage Change",
+          summary:
+            "The two calculation skills that come up most often in OCR Economics data-response questions.",
+          sections: [
+            {
+              heading: "Calculating a percentage",
+              body: [
+                "To express one value as a percentage of another: (part ÷ whole) × 100. For example, if a household spends £280 of its £1,400 monthly income on food, food takes up (280 ÷ 1400) × 100 = 20% of income.",
+              ],
+            },
+            {
+              heading: "Calculating percentage change",
+              body: [
+                "Percentage change measures how much a value has grown or shrunk, relative to its starting point: ((new value − old value) ÷ old value) × 100. The result is positive for an increase and negative for a decrease.",
+                "Worked example: if the price of a weekly shop rises from £80 to £92, the percentage change is ((92 − 80) ÷ 80) × 100 = (12 ÷ 80) × 100 = 15%. This is exactly the calculation behind how CPI inflation (see 3.3) is worked out for a single item — the real CPI figure just averages this calculation across a whole basket of goods, weighted by how much people typically spend on each item.",
+                "A common error is dividing by the new value instead of the old value — always divide the change by the original (starting) figure, not the final one.",
+              ],
+            },
+          ],
+          diagram: {
+            kind: "bar",
+            title: "Worked example: weekly shop price, before and after",
+            yLabel: "Price (£)",
+            bars: [
+              { label: "Before", value: 80 },
+              { label: "After", value: 92, highlight: true },
+            ],
+            note: "Percentage change = ((92 − 80) ÷ 80) × 100 = 15%. Always divide by the 'before' (original) value, never the 'after' value.",
+          },
+          keyTerms: [
+            { term: "Percentage change", definition: "((new value − old value) ÷ old value) × 100 — how much a value has grown or shrunk relative to its starting point." },
+          ],
+          examTip:
+            "Show your working line by line in the exam, even for a 'calculate' question worth only 2-3 marks — method marks are usually available even if your final answer is wrong, but only if the examiner can see the correct formula being applied.",
+          modelAnswer: {
+            command: "Calculate",
+            question:
+              "a firm's monthly revenue rises from £45,000 to £51,750. Calculate the percentage change in revenue, showing your working (3 marks)",
+            marks: 3,
+            points: [
+              "Percentage change = ((new value − old value) ÷ old value) × 100.",
+              "Substituting the values: ((51,750 − 45,000) ÷ 45,000) × 100 = (6,750 ÷ 45,000) × 100.",
+              "6,750 ÷ 45,000 = 0.15, so the percentage change = 0.15 × 100 = 15%. The firm's monthly revenue rose by 15%.",
+            ],
+          },
+        },
+        {
+          slug: "index-numbers",
+          code: "Q2",
+          title: "Index Numbers",
+          summary:
+            "How economists convert raw data into a single comparable scale, using a base year set at 100.",
+          sections: [
+            {
+              heading: "What an index number is",
+              body: [
+                "An index number converts a series of raw figures (prices, output, wages) into a single comparable scale, by setting one period — the base year — equal to 100 and expressing every other period relative to it.",
+                "The formula for any given year's index value is: (value in that year ÷ value in the base year) × 100.",
+              ],
+            },
+            {
+              heading: "Why index numbers matter in this course",
+              body: [
+                "The Consumer Prices Index (CPI, see 3.3) is the most important index number in the whole course: it is set to 100 in a chosen base period, and its rise over time is exactly how UK inflation is measured and reported.",
+                "Reading an index number correctly: a value of 108 means the figure has risen 8% since the base year; a value of 95 means it has fallen 5% since the base year. The percentage change between any two years on an index can be calculated using the same percentage change formula as in Q1.",
+              ],
+            },
+          ],
+          diagram: {
+            kind: "line",
+            title: "Worked example: a price index, base year = 100",
+            yLabel: "Price index (base year = 100)",
+            points: [
+              { label: "Year 1 (base)", value: 100 },
+              { label: "Year 2", value: 104 },
+              { label: "Year 3", value: 111 },
+              { label: "Year 4", value: 109 },
+            ],
+            note: "Year 3's index value of 111 means prices were 11% higher than in the base year. The fall from Year 3 to Year 4 (111 to 109) shows prices fell slightly, but were still 9% above the base year.",
+          },
+          keyTerms: [
+            { term: "Index number", definition: "A figure expressing a value relative to a base year, which is set equal to 100." },
+            { term: "Base year", definition: "The reference year in an index, always given the value 100." },
+          ],
+          examTip:
+            "If a price index falls from one year to the next (e.g. 111 to 109 above), that does not mean prices fell overall since the base year — it means inflation was still positive in earlier years, just that this particular year saw a small fall. Read every index value as 'X% above/below the base year', not just compare it to the year before.",
+          modelAnswer: {
+            command: "Calculate",
+            question:
+              "a price index has a base year (Year 1) value of 100. In Year 2, the index value is 106. Calculate the percentage change in prices between Year 1 and Year 2, and explain what the Year 2 figure means (3 marks)",
+            marks: 3,
+            points: [
+              "Because the base year is always set to 100, an index value of 106 in Year 2 directly represents a rise of 6 index points from the base year.",
+              "Since the base year itself equals 100, this 6-point rise is the same as a 6% increase — using the percentage change formula: ((106 − 100) ÷ 100) × 100 = 6%.",
+              "This means prices in Year 2 were 6% higher than in Year 1 (the base year) — this is exactly how a CPI inflation figure of '6%' would be reported and interpreted in the real economy.",
+            ],
+          },
+        },
+        {
+          slug: "interpreting-data",
+          code: "Q3",
+          title: "Interpreting Tables and Graphs",
+          summary:
+            "How to read, describe and calculate from the data extracts that appear throughout OCR's exam papers.",
+          sections: [
+            {
+              heading: "Reading data accurately",
+              body: [
+                "OCR Economics papers frequently include a table or graph and ask you to identify a trend, read off a specific value, or use the data to support an answer elsewhere on the paper.",
+                "Always check the axis labels and units before answering — a graph showing 'unemployment rate (%)' is a very different thing from one showing 'number of people unemployed (thousands)', and mixing the two up is a common error.",
+              ],
+            },
+            {
+              heading: "Describing a trend",
+              body: [
+                "When asked to describe a trend, use precise language: 'rose', 'fell', 'fluctuated', 'remained broadly stable', and quote actual figures from the data rather than vague description — 'unemployment rose from 3.7% in 2022 to 4.4% in 2024' scores more marks than 'unemployment went up'.",
+                "Be careful with correlation: two variables moving together in a data extract (e.g. rising interest rates and falling inflation) does not by itself prove one caused the other — a strong answer states the likely economic mechanism linking them, not just that they moved together.",
+              ],
+            },
+          ],
+          diagram: {
+            kind: "bar",
+            title: "Worked example: reading a bar chart accurately",
+            yLabel: "Unemployment rate (%)",
+            bars: [
+              { label: "2021", value: 4.5 },
+              { label: "2022", value: 3.7 },
+              { label: "2023", value: 4.2 },
+              { label: "2024", value: 4.4, highlight: true },
+            ],
+            note: "A strong answer reads off exact values (e.g. 'the rate fell from 4.5% in 2021 to 3.7% in 2022, then rose to 4.4% by 2024') rather than a vague description like 'unemployment changed over time'.",
+          },
+          keyTerms: [
+            { term: "Trend", definition: "The general direction a data series moves in over time." },
+            { term: "Correlation", definition: "Two variables moving together — not, by itself, proof that one causes the other." },
+          ],
+          examTip:
+            "When a question says 'using the data', you must quote at least one actual figure from the table or graph in your answer — an otherwise excellent answer that never references the data extract will lose the specific 'application' marks reserved for using it.",
+          modelAnswer: {
+            command: "Analyse",
+            question:
+              "using the data in the bar chart above, analyse the trend in the UK unemployment rate between 2021 and 2024 (4 marks)",
+            marks: 4,
+            points: [
+              "The data shows the UK unemployment rate fell from 4.5% in 2021 to 3.7% in 2022, a fall of 0.8 percentage points, before rising again to 4.2% in 2023 and 4.4% in 2024.",
+              "This pattern suggests the labour market strengthened in the short term after 2021 (possibly as the economy recovered from a prior downturn), before weakening again from 2022 onwards.",
+              "The rise after 2022 is consistent with the sharp rise in interest rates over the same period (see 3.6), which would be expected to reduce aggregate demand and, with a lag, raise cyclical unemployment.",
+              "Overall, the data shows unemployment did not follow a single consistent direction across the period, falling initially before trending upward again by 2024.",
+            ],
+          },
+        },
+      ],
+    },
   ],
 };
 

@@ -29,19 +29,23 @@ export default async function SubjectPage({
 
   return (
     <Container className="py-16">
-      <nav className="text-sm text-sg-ink/50">
-        <Link href="/notes/economics" className="hover:text-sg-navy">Topics</Link>
-        <span className="mx-2">/</span>
-        <span className="text-sg-ink/70">{subject.title}</span>
-      </nav>
-
-      <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-sg-gold">
-        {subject.examBoard} {subject.qualification}
-      </p>
-      <h1 className="mt-2 font-serif-display text-3xl font-semibold text-sg-navy">
-        {subject.title}
-      </h1>
-      <p className="mt-3 max-w-2xl text-sg-ink/70">{subject.description}</p>
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wide text-sg-gold">
+            {subject.examBoard} {subject.qualification}
+          </p>
+          <h1 className="mt-2 font-serif-display text-3xl font-semibold text-sg-navy">
+            {subject.title}
+          </h1>
+          <p className="mt-3 max-w-2xl text-sg-ink/70">{subject.description}</p>
+        </div>
+        <Link
+          href={`/notes/${subject.slug}/glossary`}
+          className="shrink-0 rounded-full border border-sg-navy/20 px-5 py-2.5 text-sm font-semibold text-sg-navy transition-colors hover:bg-white"
+        >
+          Glossary →
+        </Link>
+      </div>
 
       <div className="mt-10 space-y-5">
         {subject.topics.map((topic) => (
