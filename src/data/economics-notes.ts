@@ -514,7 +514,7 @@ export const ECONOMICS: Subject = {
                 labelPos: "end",
               },
             ],
-            equilibrium: { x: 48, y: 48, label: "Equilibrium (P*, Q*)" },
+            equilibrium: { x: 47, y: 45, label: "Equilibrium (P*, Q*)" },
             note: "Above equilibrium price there is excess supply, pushing price down; below it there is excess demand, pushing price up — the market is only at rest at the point where the two curves cross.",
           },
           keyTerms: [
@@ -705,7 +705,7 @@ export const ECONOMICS: Subject = {
                 labelPos: "end",
               },
             ],
-            equilibrium: { x: 48, y: 48, label: "Equilibrium wage" },
+            equilibrium: { x: 47, y: 45, label: "Equilibrium wage" },
             note: "Exactly the same logic as a goods market: the wage rate settles where the number of workers firms want to hire equals the number of workers willing to work at that wage.",
           },
           keyTerms: [
@@ -1407,7 +1407,7 @@ export const ECONOMICS: Subject = {
                 labelPos: "end",
               },
             ],
-            equilibrium: { x: 64, y: 62, label: "Market quantity" },
+            equilibrium: { x: 45, y: 47, label: "Market quantity" },
             note: "The firm only pays its own private cost, so the market produces at the higher 'market quantity'. The true social cost (including pollution) is higher, meaning the socially optimal quantity is actually lower than the free market provides — this gap is the market failure.",
           },
           keyTerms: [
